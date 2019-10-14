@@ -21,7 +21,7 @@ setup(
     install_requires=install_requires,
     extras_requires={
         'neb': 'nebuchadnezzar'
-    }
+    },
     packages=find_packages(),
     include_package_data=True
 )
