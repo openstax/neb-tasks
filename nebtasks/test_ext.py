@@ -1,5 +1,5 @@
-from nebu.cli.extensions import neb_extension, NebExtension
+from nebu.cli.task_extensions import neb_task, NebTask
 
-@neb_extension(name='test_ext')
+@neb_task(name='test_ext')
 def test_ext():
-    return NebExtension()
+    return NebTask()
