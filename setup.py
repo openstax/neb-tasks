@@ -12,13 +12,16 @@ def parse_requirements(req_file):
 install_requires = parse_requirements('requirements.txt')
 
 setup(
-    name='nebtasks',
-    author='Openstax',
+    name='neb-tasks',
+    author='OpenStax',
     author_email='info@cnx.org',
     url="https://github.com/openstax/neb-tasks",
     license='AGPL, See also LICENSE.txt',
     description='Content task addons to neb',
     install_requires=install_requires,
+    extras_requires={
+        'neb': 'nebuchadnezzar'
+    }
     packages=find_packages(),
     include_package_data=True
 )

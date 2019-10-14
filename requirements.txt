@@ -1,3 +1,2 @@
-nebuchadnezzar
 lxml
 cnx-litezip
