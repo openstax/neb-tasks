@@ -19,8 +19,8 @@ setup(
     license='AGPL, See also LICENSE.txt',
     description='Content task addons to neb',
     install_requires=install_requires,
-    extras_requires={
-        'neb': 'nebuchadnezzar'
+    entry_points={
+        'neb.extension': 'tasks=nebtasks:load_modules',
     },
     packages=find_packages(),
     include_package_data=True
