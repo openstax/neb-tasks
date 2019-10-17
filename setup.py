@@ -9,7 +9,8 @@ def parse_requirements(req_file):
         ]
     return list(reqs)
 
-install_requires = parse_requirements('requirements.txt')
+install_requires = parse_requirements('requirements/install.txt')
+tests_require = parse_requirements('requirements/test.txt')
 
 setup(
     name='neb-tasks',
@@ -19,6 +20,10 @@ setup(
     license='AGPL, See also LICENSE.txt',
     description='Content task addons to neb',
     install_requires=install_requires,
+    extras_require={
+        'test': tests_require,
+    },
+    tests_require=tests_require,
     entry_points={
         'neb.extension': 'tasks=nebtasks:load_modules',
     },
