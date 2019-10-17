@@ -1,4 +1,5 @@
 from setuptools import setup, find_packages
+from pathlib import Path
 
 def parse_requirements(req_file):
     """Parse a requirements.txt file to a list of requirements"""
@@ -9,12 +10,16 @@ def parse_requirements(req_file):
         ]
     return list(reqs)
 
+version_file = open(Path(__file__).parent.resolve() / "VERSION")
+version = version_file.read().strip()
+
 install_requires = parse_requirements('requirements/install.txt')
 tests_require = parse_requirements('requirements/test.txt')
 
 setup(
     name='neb-tasks',
     author='OpenStax',
+    version=version,
     author_email='info@cnx.org',
     url="https://github.com/openstax/neb-tasks",
     license='AGPL, See also LICENSE.txt',
