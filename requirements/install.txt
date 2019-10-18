@@ -1,3 +1,4 @@
 nebuchadnezzar
 lxml
 cnx-litezip
+click
