@@ -10,7 +10,5 @@ def load_modules(cli):
             task_spec = spec_from_file_location(module_name, file_name)
             task_module = module_from_spec(task_spec)
             task_spec.loader.exec_module(task_module)
-            try:
+            if hasattr(task_module, 'load'):
                 task_module.load(cli)
-            except:
-                pass
