@@ -24,6 +24,7 @@ def to_str_dict(collection_or_module):
 
 
 task_keys, task_default_values = zip(*{
+    'before_action': noop,
     'module_action': noop,
     'collection_action': noop
 }.items())
@@ -32,7 +33,10 @@ NebTask.__new__.__defaults__ = task_default_values
 
 
 def execute_task_actions(content_dir, task):
-    module_action, collection_action = task
+    before_action, module_action, collection_action = task
+
+    before_action()
+
     content_dir = Path(content_dir).resolve()
     ex = [lambda filepath: '.sha1sum' in filepath.name]
     for dirname, subdirs, filenames in os.walk(str(content_dir)):
