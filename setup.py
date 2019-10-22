@@ -18,9 +18,9 @@ tests_require = parse_requirements('requirements/test.txt')
 
 setup(
     name='neb-tasks',
-    author='OpenStax',
+    author='tomjw64',
     version=version,
-    author_email='info@cnx.org',
+    author_email='tomjw64@gmail.com',
     url="https://github.com/openstax/neb-tasks",
     license='AGPL, See also LICENSE.txt',
     description='Content task addons to neb',
@@ -33,5 +33,6 @@ setup(
         'neb.extension': 'tasks=nebtasks:load_modules',
     },
     packages=find_packages(),
-    include_package_data=True
+    include_package_data=True,
+    python_requires='>=3',
 )
